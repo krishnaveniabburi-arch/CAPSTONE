@@ -4,11 +4,13 @@ import express from 'express';
 import cors from 'cors';
 
 import connectDB from './db.js';
+import mongoose from 'mongoose';
 
 import patientroutes from './routes/patientroutes.js';
 import errorHandler from './middleware/errorHandler.js';
 
 const app = express();
+
 
 // use production port OR if in development 3000 by default 
 const port = process.env.PORT || 3000;
