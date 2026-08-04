@@ -1,5 +1,3 @@
-// middleware/errorHandler.js
-// Centralized error handling middleware
 // Handles API errors and returns consistent responses
 
 const errorHandler = (err, req, res, next) => {
@@ -14,11 +12,7 @@ const errorHandler = (err, req, res, next) => {
   let message = err.message || "Internal Server Error";
 
 
-  /*
-    MongoDB duplicate key error
-    Example:
-    duplicate email or phone number
-  */
+  /* MongoDB duplicate key error duplicate email or phone number */
   if (err.code === 11000) {
 
     statusCode = 400;
@@ -32,11 +26,7 @@ const errorHandler = (err, req, res, next) => {
   }
 
 
-  /*
-    Mongoose validation error
-    Example:
-    Required fields missing
-  */
+  /* Mongoose validation error Required fields missing */
   if (err.name === "ValidationError") {
 
     statusCode = 400;
@@ -50,11 +40,7 @@ const errorHandler = (err, req, res, next) => {
   }
 
 
-  /*
-    Invalid MongoDB ObjectId
-    Example:
-    /patients/abc123
-  */
+  /* Invalid MongoDB ObjectId /patients/abc123 */
   if (err.name === "CastError") {
 
     statusCode = 404;

@@ -1,16 +1,4 @@
-// middleware/auth.js
-// JWT Authentication Middleware
-// Protects routes that require logged-in users
 
-import jwt from "jsonwebtoken";
-
-
-/**
- * Verify JWT token from request header
- * 
- * Expected header format:
- * Authorization: Bearer <token>
- */
 const auth = (req, res, next) => {
 
   try {

@@ -3,7 +3,7 @@ import express from "express";
 import cors from 'cors';
 import connectDB from './db.js';
 import mongoose from 'mongoose';
-import patientRoutes from "./routes/patientRoutes.js";
+import patientRoutes from "./routes/patientroutes.js";
 import errorHandler from "./middleware/errorHandler.js";
 
 // Load environment variables
