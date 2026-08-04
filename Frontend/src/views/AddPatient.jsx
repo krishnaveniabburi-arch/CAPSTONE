@@ -1,5 +1,3 @@
-// src/views/AddPatient.jsx
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { addPatient } from "../api";

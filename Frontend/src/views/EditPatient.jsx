@@ -1,5 +1,3 @@
-// src/views/EditPatient.jsx
-
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getPatientById, updatePatient } from "../api";
