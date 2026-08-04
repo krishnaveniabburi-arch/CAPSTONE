@@ -4,7 +4,7 @@ import auth from "../middleware/auth.js";
 
 const router = express.Router();
 // Get all patients
-router.get("/", auth, async (req, res, next) => {
+router.get("/", auth, async (req, res, next) => 
 
   try {
 
@@ -100,17 +100,7 @@ router.post("/", auth, async (req, res, next) => {
 
 });
 
-
-
-/*
-=====================================
-UPDATE PATIENT
-Route: PUT /api/patients/:id
-
-Access:
-Protected
-=====================================
-*/
+// Update patient
 router.put("/:id", auth, async (req, res, next) => {
 
   try {
@@ -164,22 +154,10 @@ router.put("/:id", auth, async (req, res, next) => {
 
 });
 
-
-
-/*
-=====================================
-DELETE PATIENT
-Route: DELETE /api/patients/:id
-
-Access:
-Protected
-=====================================
-*/
+// Delete patient
 router.delete("/:id", auth, async (req, res, next) => {
 
   try {
-
-
     const patient =
       await Patient.findById(
         req.params.id
