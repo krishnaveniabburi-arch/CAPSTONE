@@ -4,7 +4,7 @@ import auth from "../middleware/auth.js";
 
 const router = express.Router();
 // Get all patients
-router.get("/", auth, async (req, res, next) => 
+router.get("/", auth, async (req, res, next) => {
 
   try {
 
