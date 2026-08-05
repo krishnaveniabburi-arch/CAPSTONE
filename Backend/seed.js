@@ -14,6 +14,7 @@ const patients = [
     age: 45,
     gender: "Male",
     phone: "5551234567",
+    email: "jhon@email.com"
     address: "New Brunswick NJ",
     doctor: "Sarah Brown",
     diagnosis: "Diabetes",

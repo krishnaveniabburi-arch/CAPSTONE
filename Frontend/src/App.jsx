@@ -1,12 +1,11 @@
 import { useState } from 'react'
-
-import './App.css'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Dashboard from "./views/Dashboard";
 import AddPatient from "./views/AddPatient";
 import EditPatient from "./views/EditPatient";
 import PatientDetails from "./views/PatientDetails";
+import Login from "./views/Login";
 import "./App.css";
 
 // protects routes using jwttoken

@@ -6,16 +6,19 @@ const getToken = () => localStorage.getItem("token");
 // Common API request function
 const apiRequest = async (endpoint, options = {}) => {
   const token = getToken();
-
+// creating base headers object
+  const headers = {
+      "Content-Type": "application/json",
+       ...options.headers,
+    };
+    if(token) {
+      headres [ "Authorization"] = `Bearer ${token}`;
+    }
+  
   const response = await fetch(`${BASE_URL}${endpoint}`, {
     ...options,
-    headers: {
-      "Content-Type": "application/json",
-      ...(token && { Authorization: `Bearer ${token}` }),
-      ...options.headers,
-    },
+   headers: headers,
   });
-
   const data = await response.json();
 
   if (!response.ok) {
