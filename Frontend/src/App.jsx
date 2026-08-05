@@ -10,7 +10,6 @@ import PatientDetails from "./views/PatientDetails";
 import "./App.css";
 
 // protects routes using jwttoken
-
 const PrivateRoute = ({ children }) => {
   const token = localStorage.getItem("token");
 

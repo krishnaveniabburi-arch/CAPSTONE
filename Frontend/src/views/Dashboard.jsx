@@ -15,7 +15,7 @@ function Dashboard() {
   const loadPatients = async () => {
     try {
       setLoading(true);
-      const data = await getPatients();
+      const data = await getPatients();s
       setPatients(data);
       setFilteredPatients(data);
     } catch (err) {

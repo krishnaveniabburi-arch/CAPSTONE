@@ -1,4 +1,4 @@
-// models/Patient.js
+
 // Patient database schema for Patient Care Portal
 
 import mongoose from "mongoose";
