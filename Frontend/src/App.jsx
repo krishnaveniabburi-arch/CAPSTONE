@@ -42,13 +42,23 @@ function App() {
             <Route
               path="/patient/:id"
               element={<PatientDetails />}
-            />
-          </Routes>
-        </main>
-      </div>
-    </Router>
+              />
+
+               {/* Public Route */}
+              <Route 
+               path="/login" 
+               element={<Login />} 
+              />
+                <Route path="*" 
+                element={<Navigate to="/login" />}
+                />
+             </Routes>
+             </main>
+         </div>
+         </Router>
   );
 }
+
 
 export default App;        
 
