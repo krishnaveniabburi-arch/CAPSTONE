@@ -6,6 +6,8 @@ import mongoose from 'mongoose';
 import patientRoutes from "./routes/patientroutes.js";
 import errorHandler from "./middleware/errorHandler.js";
 
+
+
 // Load environment variables
 dotenv.config();
 const app = express();
@@ -28,6 +30,7 @@ app.use(
   "/api/patients",
   patientRoutes
 );
+
 
 // Error handling middleware
 // Must be placed after all routes

@@ -1,6 +1,7 @@
 import express from 'express';
 import Patient from "../models/Patient.js";
 import auth from "../middleware/auth.js";
+import User from "../models/user.js";
 
 const router = express.Router();
 // Get all patients
@@ -196,6 +197,31 @@ router.delete("/:id", auth, async (req, res, next) => {
 
   }
 
+});
+
+router.post("/login", async (req, res, next) => {
+  try {
+    const { email, password } = req.body;
+
+    const user = await user.findone({ email });
+    if (!user) {
+      return res.status(401).json( {message: "Invalid email or password" });
+     }
+     if (user.password !== password) {
+       return res.status(401).json({ message: "Invalid email or password" });
+     }
+     const token = JsonWebTokenError.sign({ id: user._id }, process.env.jwt_SECRET || "secretkey", {
+      expiresIn: "30d",
+     });
+     res.status(200).json({
+      _id: user._id,
+      email: user.email,
+      token: token,
+     });
+    
+  } catch (error) {
+    next(error);
+  }
 });
 
 

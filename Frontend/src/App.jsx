@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Dashboard from "./views/Dashboard";
 import AddPatient from "./views/AddPatient";
@@ -11,14 +11,14 @@ import "./App.css";
 // protects routes using jwttoken
 const PrivateRoute = ({ children }) => {
   const token = localStorage.getItem("token");
-
-  return token ? children : <Navigate to="/login" />;
+  const isValidToken = token && token !== "undefined" && token !== "null";
+  return isValidToken ? children : <Navigate to="/login" replace/>;
 };
 
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div className="app">
         {/* Navigation Bar */}
         <Navbar />
@@ -27,21 +27,21 @@ function App() {
         <main className="container">
           <Routes>
             {/* Dashboard */}
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
 
             {/* Add Patient */}
-            <Route path="/add-patient" element={<AddPatient />} />
+            <Route path="/add-patient" element={<PrivateRoute><AddPatient /></PrivateRoute>} />
 
             {/* Edit Patient */}
             <Route
               path="/edit-patient/:id"
-              element={<EditPatient />}
+              element={<PrivateRoute><EditPatient /></PrivateRoute>}
             />
 
             {/* Patient Details */}
             <Route
               path="/patient/:id"
-              element={<PatientDetails />}
+              element={<privateRoute><PatientDetails /></privateRoute>}
               />
 
                {/* Public Route */}
@@ -55,7 +55,7 @@ function App() {
              </Routes>
              </main>
          </div>
-         </Router>
+         </BrowserRouter>
   );
 }
 
