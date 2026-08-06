@@ -12,7 +12,7 @@ import "./App.css";
 const PrivateRoute = ({ children }) => {
   const token = localStorage.getItem("token");
   const isValidToken = token && token !== "undefined" && token !== "null";
-  return isValidToken ? children : <Navigate to="/login" replace/>;
+  return isValidToken ? children : <Navigate to="/login" replace />;
 };
 
 
@@ -26,8 +26,10 @@ function App() {
         {/* Main Content */}
         <main className="container">
           <Routes>
+            {/* Root path redirect: automatically pushes localhost:5173 to localhost:5173/login*/}
+            <Route path="/" element={<Navigate to="/login" replace />} />
             {/* Dashboard */}
-            <Route path="/" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+            <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
 
             {/* Add Patient */}
             <Route path="/add-patient" element={<PrivateRoute><AddPatient /></PrivateRoute>} />
@@ -41,28 +43,27 @@ function App() {
             {/* Patient Details */}
             <Route
               path="/patient/:id"
-              element={<privateRoute><PatientDetails /></privateRoute>}
-              />
+              element={<PrivateRoute><PatientDetails /></PrivateRoute>}
+            />
 
-               {/* Public Route */}
-              <Route 
-               path="/login" 
-               element={<Login />} 
-              />
-                <Route path="*" 
-                element={<Navigate to="/login" />}
-                />
-             </Routes>
-             </main>
-         </div>
-         </BrowserRouter>
+            {/* Public Route */}
+            <Route
+              path="/login"
+              element={<Login />}
+            />
+            <Route path="*"
+              element={<Navigate to="/login" replace />}
+            />
+          </Routes>
+        </main>
+      </div>
+    </BrowserRouter>
   );
 }
 
 
-export default App;        
+export default App;
 
-      
-           
-                
-                  
+
+
+
