@@ -113,11 +113,7 @@ function Login() {
             color: "#666",
           }}
         >
-          Demo Login:
-          <br />
-          Email: <strong>admin@gmail.com</strong>
-          <br />
-          Password: <strong>admin123</strong>
+          
         </p>
       </div>
     </div>
