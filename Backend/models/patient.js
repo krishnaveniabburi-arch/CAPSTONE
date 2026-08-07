@@ -132,17 +132,6 @@ patientSchema.index({
   doctor: 1
 });
 
-
-patientSchema.index({
-  email: 1
-});
-
-
-patientSchema.index({
-  phone: 1
-});
-
-
 // Export Patient model
 
 const Patient = mongoose.model(
