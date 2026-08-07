@@ -12,8 +12,10 @@ created patient management routes
 
 GET/API/PATIENTS-FETCHES ALL ACTIVE PATIENTS FROM mONGOdb TO RENDER DYNAMICALLY ON THE DASHBOARD.JSX VIEW
 GET/API/PATIENTS/:ID retrieves detailed information for a singlr page patientused by patientdetails.jsx Editpatient.jsx.
+http://localhost:3000/api/patients/6a756147d943eab2d48ed473
 POST/api/patients
-creates and inserts a new transactional patient record using data submitted from the AddPatient.jsx from VIEW and i added link from my thunderclient testing down.
+http://localhost:3000/api/patients
+creates and inserts a new transactional patient record using data submitted from the AddPatient.jsx from VIEW and i added link from my thunderclient testing.
 PUT/api/patients/:id
 updates fields of an existing patient resourcs profile matching the provided ID.
 DELETE-clears a patient profile record perminently from the DB collection.
@@ -46,6 +48,8 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzQ5NDU4ZjdkMjU5OGU1MGVjNmJiZiI
 
 GET request 
 tested using url and enter headers and token to get the 
+http://localhost:3000/api/patients/6a756147d943eab2d48ed473
+got the patient details using by id
 
 POST Request 
 http://localhost:3000/api/patients
