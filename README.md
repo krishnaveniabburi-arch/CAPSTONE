@@ -17,6 +17,8 @@ POST/api/patients
 http://localhost:3000/api/patients
 creates and inserts a new transactional patient record using data submitted from the AddPatient.jsx from VIEW and i added link from my thunderclient testing.
 PUT/api/patients/:id
+http://localhost:3000/api/patients/6a756147d943eab2d48ed473
+i can see updated field on thunderclient .i updated patient age 32 to 33.
 updates fields of an existing patient resourcs profile matching the provided ID.
 DELETE-clears a patient profile record perminently from the DB collection.
 
@@ -54,3 +56,8 @@ got the patient details using by id
 POST Request 
 http://localhost:3000/api/patients
 i did post request gave json body and auth token to get Post request and got  the patient deatails response  
+
+TO LOGIN TO PARENT CARE PORTAL 
+USERNAME : admin@gmail.com
+PASSWORD: admin123
+I added new patient data in to portal and can see on DASBOARD page and add to Backend MongoDB.
