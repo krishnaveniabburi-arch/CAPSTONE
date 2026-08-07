@@ -12,7 +12,7 @@ const apiRequest = async (endpoint, options = {}) => {
        ...options.headers,
     };
     if(token) {
-      headres [ "Authorization"] = `Bearer ${token}`;
+      headers [ "Authorization"] = `Bearer ${token}`;
     }
   
   const response = await fetch(`${BASE_URL}${endpoint}`, {

@@ -15,7 +15,7 @@ function Dashboard() {
   const loadPatients = async () => {
     try {
       setLoading(true);
-      const data = await getPatients();s
+      const data = await getPatients();
       setPatients(data);
       setFilteredPatients(data);
     } catch (err) {
@@ -33,8 +33,7 @@ function Dashboard() {
   // Search patients by name or doctor
   useEffect(() => {
     const filtered = patients.filter((patient) => {
-      const fullName =
-        `${patient.firstName} ${patient.lastName}`.toLowerCase();
+      const fullName = `${patient.firstName} ${patient.lastName}`.toLowerCase();
 
       return (
         fullName.includes(search.toLowerCase()) ||
@@ -65,38 +64,38 @@ function Dashboard() {
   };
 
   if (loading) {
-    return <h2>Loading patients...</h2>;
+    return <p>Loading patients...</p>;
   }
 
   if (error) {
-    return <h2>{error}</h2>;
+    return <p>{error}</p>;
   }
 
   return (
-    <div className="dashboard">
-
-      <div className="dashboard-header">
+    <>
+      <div className="main-content">
         <h1>Patient Dashboard</h1>
 
-        <button
-          className="add-btn"
-          onClick={() => navigate("/add-patient")}
-        >
-          + Add Patient
-        </button>
+        <div className="control-bar">
+          <button
+            className="btn-primary"
+            onClick={() => navigate("/add-patient")}
+          >
+            + Add Patient
+          </button>
+        </div>
+
+        <input
+          type="text"
+          placeholder="Search by patient name or doctor..."
+          className="search-box"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
       </div>
 
-      <input
-        type="text"
-        placeholder="Search by patient name or doctor..."
-        className="search-box"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
-
-      {filteredPatients.length === 0 ? (
-        <p>No patient records found.</p>
-      ) : (
+      {/* Structured patient table */}
+      <div className="table-responsive">
         <table className="patient-table">
           <thead>
             <tr>
@@ -127,27 +126,21 @@ function Dashboard() {
                 <td>
                   <button
                     className="view-btn"
-                    onClick={() =>
-                      navigate(`/patient/${patient._id}`)
-                    }
+                    onClick={() => navigate(`/patient/${patient._id}`)}
                   >
                     View
                   </button>
 
                   <button
                     className="edit-btn"
-                    onClick={() =>
-                      navigate(`/edit-patient/${patient._id}`)
-                    }
+                    onClick={() => navigate(`/edit-patient/${patient._id}`)}
                   >
                     Edit
                   </button>
 
                   <button
                     className="delete-btn"
-                    onClick={() =>
-                      handleDelete(patient._id)
-                    }
+                    onClick={() => handleDelete(patient._id)}
                   >
                     Delete
                   </button>
@@ -156,8 +149,8 @@ function Dashboard() {
             ))}
           </tbody>
         </table>
-      )}
-    </div>
+      </div>
+    </>
   );
 }
 

@@ -50,8 +50,8 @@ function AddPatient() {
         );
         return;
       }
-
-      await addPatient(patient);
+      const token = localStorage.getItem("token")
+      await addPatient(patient, token);
 
       setSuccess(
         "Patient added successfully!"
