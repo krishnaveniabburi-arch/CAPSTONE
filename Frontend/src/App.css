@@ -95,7 +95,7 @@ body {
 .search-box:focus {
     outline: none;
     border-color: #0B6FA4;
-    box-shadow: 0 0 5px rgba(11,111,164,.3);
+    box-shadow: 0 0 5px rgba(11, 111, 164, .3);
 }
 
 /* BUTTONS */
@@ -153,7 +153,7 @@ table {
     background: white;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .08);
 }
 
 th {
@@ -187,7 +187,7 @@ tr:hover {
     background: white;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .08);
 }
 
 .form-group {
@@ -231,7 +231,7 @@ tr:hover {
     background: white;
     padding: 40px;
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
 }
 
 .login-card h1 {
@@ -295,12 +295,12 @@ tr:hover {
 /* CARD */
 
 .card {
-     max-width: 700px;
+    max-width: 700px;
     margin: 30px auto;
     background: white;
     padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .08);
 }
 
 /* RESPONSIVE */

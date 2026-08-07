@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000/api";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 // Get JWT token from localStorage
 const getToken = () => localStorage.getItem("token");
@@ -57,7 +57,7 @@ export const deletePatient = (id) =>
 
 // Login
 export const login = async (email, password) => {
-  const data = await apiRequest("/login", {
+  const data = await apiRequest("/user/login", {
     method: "POST",
     body: JSON.stringify({ email, password }),
   });
